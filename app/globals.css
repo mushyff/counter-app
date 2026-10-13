@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0c0d0f;
+  --foreground: #e8e6e1;
+  --metal: #a8a29a;
+  --metal-bright: #d6d3d1;
+  --steel: #3f3f46;
+  --panel: #141518;
+  --accent: #c4b59a;
+  --surface-input: #121418;
+  --surface-numbers: #181a1d;
+  --surface-script: #1c1a16;
+  --surface-spar: #15181c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-metal: var(--metal);
+  --color-metal-bright: var(--metal-bright);
+  --color-steel: var(--steel);
+  --color-panel: var(--panel);
+  --color-accent: var(--accent);
+  --color-surface-input: var(--surface-input);
+  --color-surface-numbers: var(--surface-numbers);
+  --color-surface-script: var(--surface-script);
+  --color-surface-spar: var(--surface-spar);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), ui-sans-serif, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+pre,
+button,
+input,
+textarea {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes metal-shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.animate-rise {
+  animation: rise 0.7s ease-out both;
+}
+
+.animate-rise-delay {
+  animation: rise 0.7s ease-out 0.15s both;
+}
+
+.animate-rise-delay-2 {
+  animation: rise 0.7s ease-out 0.3s both;
+}
+
+.metal-text {
+  background: linear-gradient(
+    115deg,
+    #6b6560 0%,
+    #e8e4dc 22%,
+    #8a847c 45%,
+    #f5f2eb 58%,
+    #9c958c 78%,
+    #cfc8be 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: metal-shine 8s linear infinite;
+}
